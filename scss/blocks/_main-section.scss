@@ -1,0 +1,69 @@
+.main-section {
+    display: block;
+    justify-content: center;
+    margin-inline: auto;
+    margin-bottom: 11.4rem;
+
+    &__title {
+        @include text($ff, 700, 5.6rem, 7.8rem, $text);
+        text-align: center;
+        max-width: 104.6rem;
+        margin-inline: auto;
+        margin-bottom: 38px;
+    }
+
+    &__desc {
+        @include text($ff, 400, 1.6rem, 2.4rem, $grey);
+        max-width: 82.8rem;
+        text-align: center;
+        margin-inline: auto;
+        margin-bottom: 38px;
+    }
+}
+.title {
+    &__blue {
+        color: $primary;
+    }
+}
+
+.main-section .btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-inline: auto;
+    max-width: 17.9rem;
+    margin-bottom: 26px;
+}
+
+
+.main-section__link { 
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.1rem;
+    margin-inline: auto;
+    max-width: 15rem;
+}
+.link {
+    &__lets {
+        position: relative;
+        @include text($ff, 400, 1.4rem, 2.4rem, $grey);
+        text-align: center;
+    }
+    &__lets::after {
+        content: "";
+        position: absolute;
+        height: 1px;
+        bottom: 0;
+        margin: 0 auto;
+        left: 0;
+        right: 0;
+    	width: 80%;
+        background: $border;
+        transition: $transition;
+    }
+    &__lets:hover::after {
+        width: 100%;
+        background: $primary;
+    }
+}

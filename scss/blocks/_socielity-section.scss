@@ -1,0 +1,35 @@
+.socielity-section {
+    margin-bottom: 10rem;
+
+    &__item {
+        display: grid;
+	    grid-template-columns: repeat(auto-fill, minmax(27rem, 1fr));
+	    gap: 30px;
+	    text-align: center;
+	    @include mobile {
+		    grid-template-columns: 1fr;
+	    }
+    }
+
+    &__list {
+        background: $bg;
+        border-radius: 0.8rem;
+        padding: 3rem 2.3rem 2rem 1.1rem;
+    }
+
+    &__list-img {
+        margin-bottom: 1.9rem;
+        height: 6rem;
+    }
+
+    &__list-title {
+        @include text($ff, 700, 2rem, 2.8rem, $text);
+        text-align: center;
+        margin-bottom: 1.2rem;
+    }
+
+    &__list-desc {
+        @include text($ff, 400, 1.6rem, 2.4rem, $grey);
+        text-align: center;
+    }
+}

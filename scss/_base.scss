@@ -1,0 +1,63 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+html {
+	font-size: 10px;
+    @include tablet {
+        font-size: 9px;
+    }
+    @include tablet-small {
+        font-size: 8px;
+    }
+    @include mobile {
+        font-size: 7px;
+    }
+}
+
+body {
+    font-family: $ff;
+}
+
+.first {
+    max-width: 144rem;
+}
+
+.container {
+    padding: 0 2rem;
+    max-width: $container;
+    margin-inline: auto;
+}
+
+.btn {
+    display: inline-block;
+    border: 0;
+    outline: 0;
+    background: $primary;
+    border-radius: 0.8rem;
+    cursor: pointer;
+    &._primary {
+        padding: 1.3rem 3.4rem;
+        @include text($ff, 700, 1.6rem, 2.4rem, $white);
+    }
+    &._secondary {
+        padding: 1.1rem 2.5rem;
+        @include text($ff, 700, 1.6rem, 2.4rem, $white);
+    }
+}
+.material-icons {
+	cursor: pointer;
+}
+
+.title {
+    @include text($ff, 700, 2.6rem, 4.8rem, $text);
+    text-align: center;
+    margin-bottom: 2.4rem;
+}
+.desc {
+    @include text($ff, 400, 1.6rem, 2.4rem, $grey);
+    text-align: center;
+    max-width: 84.5rem;
+    margin-inline: auto;
+    margin-bottom: 4.6rem;
+}

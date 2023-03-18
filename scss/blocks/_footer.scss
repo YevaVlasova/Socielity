@@ -1,0 +1,140 @@
+.footer {
+    background: $primary;
+}
+
+.footer-section {
+    display: none;
+}
+
+footer .container {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    column-gap: 0.8rem;
+    padding: 2.8rem 2rem 4rem;
+    gap: 10rem;
+    @include tablet {
+        grid-template-columns: auto auto auto ;
+        gap: 3rem;
+    }
+    @include tablet-small {
+        grid-template-columns: auto auto;
+    }
+    @include mobile {
+        grid-template-columns: auto;
+        .footer-section {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            max-width: 50rem;
+            margin: 3rem auto;
+            @include text($ff, 400, 1.6rem, 2.4rem, $white);
+        }
+        #footerAbout, #footerHelp, #footerAccount, #footerContacts{
+            display: none;
+        }
+  
+        .material-icons {
+            cursor: pointer;
+        }
+  
+        .material-icons:hover {
+            color: $border;
+        }
+  
+        .dn {
+            display: none;
+        }
+  
+        #footerAbout.db, #footerHelp.db, #footerAccount.db, #footerContacts.db {
+            display: block;
+        }
+    }
+}
+.footer-about {
+    max-width: 33rem;
+
+		&__title {
+            @include text($ff, 700, 2.6rem, 4.8rem, $white);
+            margin-bottom: 3rem;
+		}
+
+		&__desc {
+            @include text($ff, 400, 1.6rem, 2.4rem, $white);
+		}
+}
+.footer-section {
+}
+.footer-s {
+}
+.material-icons {
+}
+.footer-help {
+    max-width: 10rem;
+
+		&__title {
+            @include text($ff, 700, 2rem, 4.8rem, $white);
+            margin-bottom: 3rem;
+		}
+
+		&__text {
+            
+		}
+}
+.help {
+
+		&__li {
+            margin-bottom: 0.8rem;
+            
+		}
+
+		&__a {
+            @include text($ff, 400, 1.4rem, 2.4rem, $white);
+		}
+}
+.footer-account {
+    max-width: 13.6rem;
+
+		&__title {
+            @include text($ff, 700, 2rem, 4.8rem, $white);
+            margin-bottom: 3rem;
+		}
+
+		&__text {
+		}
+}
+.account {
+
+		&__li {
+            margin-bottom: 0.8rem;
+		}
+
+		&__a {
+            @include text($ff, 400, 1.4rem, 2.4rem, $white);
+		}
+}
+.footer-contacts {
+    max-width: 21.5rem;
+    display: flex;
+    justify-content: space-between;
+    gap: 1.8rem;
+
+		&__title {
+            @include text($ff, 700, 2rem, 4.8rem, $white);
+            margin-bottom: 3rem;
+		}
+
+		&__desc {
+            @include text($ff, 400, 1.6rem, 2.4rem, $white);
+            display: flex;
+            align-items: center;
+            gap: 1.8rem;
+            margin-bottom: 0.8rem;
+		}
+        &__socials {
+            margin-top: 3.2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1.8rem;
+        }
+}

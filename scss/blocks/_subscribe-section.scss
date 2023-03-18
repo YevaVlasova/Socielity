@@ -1,0 +1,24 @@
+.subscribe-section {
+    display: block;
+    align-items: center;
+    max-width: 77rem;
+    margin-inline: auto;
+    margin-bottom: 8rem;
+}
+.email {
+    background: $email;
+    border-radius: 1.6rem;
+    display: flex;
+    align-items: center;
+    padding-right: 1.9rem;
+
+    &__input {
+        border-radius: 1.6rem;
+        background: transparent;
+        width: 100%;
+        padding: 2.6rem 3.4rem;
+        border: 0;
+        outline: 0;
+        @include text($ff, 400, 2rem, 2.8rem, $grey);
+    }
+}
