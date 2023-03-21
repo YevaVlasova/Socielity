@@ -336,8 +336,41 @@ html {
     html {
       font-size: 7px; } }
 
+:root {
+  --color-bg: #000;
+  --color-primary: #5987D1;
+  --color-grey: #FFF;
+  --color-owl: #2F2F2F;
+  --color-list: #121212;
+  --color-input: #262626;
+  --color-footer: #272727; }
+
+.dark-theme {
+  background: var(--color-bg); }
+  .dark-theme .btn {
+    background: var(--color-primary); }
+  .dark-theme a {
+    color: var(--color-grey); }
+  .dark-theme .icon-menu {
+    color: var(--color-grey); }
+  .dark-theme .main-section__title, .dark-theme .main-section__desc, .dark-theme .title, .dark-theme .desc, .dark-theme .groups-section__title, .dark-theme .groups-section__desc {
+    color: var(--color-grey); }
+  .dark-theme .owl-stage-outer {
+    background: var(--color-owl); }
+  .dark-theme .socielity-section__list {
+    background: var(--color-list); }
+  .dark-theme .socielity-section__list-title, .dark-theme .socielity-section__list-desc {
+    color: var(--color-grey); }
+  .dark-theme .email {
+    background: var(--color-input); }
+    .dark-theme .email__input {
+      color: var(--color-grey); }
+  .dark-theme .footer {
+    background: var(--color-footer); }
+
 body {
-  font-family: "Inter", sans-serif; }
+  font-family: "Inter", sans-serif;
+  background: #FFFFFF; }
 
 .first {
   max-width: 144rem; }
@@ -414,7 +447,7 @@ body {
     background-size: auto auto;
     background-clip: border-box;
     background-size: 200% auto;
-    color: #fff;
+    color: #FFFFFF;
     background-clip: text;
     text-fill-color: transparent;
     -webkit-background-clip: text;
@@ -475,31 +508,31 @@ body {
         position: absolute;
         top: 3.5rem;
         right: 4rem; } }
-.nav__ul:hover li a {
+.nav__ul:hover .nav__li .nav__a {
   -webkit-transform: scale(1.2);
           transform: scale(1.2);
   opacity: 0.2;
   -webkit-filter: blur(0.1rem);
           filter: blur(0.1rem); }
-.nav__ul li {
+.nav__ul .nav__li {
   list-style: none;
   margin: 0 2rem;
   -webkit-transition: 0.2s all ease-in-out;
   transition: 0.2s all ease-in-out; }
-.nav__ul li a {
+.nav__ul .nav__li .nav__a {
   display: block;
   position: relative;
   padding: 0 0.5rem;
   -webkit-transition: 0.5s;
   transition: 0.5s; }
-.nav__ul li a:hover {
+.nav__ul .nav__li .nav__a:hover {
   -webkit-transform: scale(1.5);
           transform: scale(1.5);
   opacity: 1;
   -webkit-filter: blur(0);
           filter: blur(0);
   color: #FFFFFF; }
-.nav__ul li a:before {
+.nav__ul .nav__li .nav__a:before {
   content: '';
   position: absolute;
   top: 0;
@@ -514,7 +547,7 @@ body {
   -webkit-transform: scaleX(0);
           transform: scaleX(0);
   z-index: -1; }
-.nav__ul li a:hover:before {
+.nav__ul .nav__li .nav__a:hover:before {
   -webkit-transition: -webkit-transform 0.5s;
   transition: -webkit-transform 0.5s;
   transition: transform 0.5s;
@@ -536,6 +569,10 @@ body {
   font-size: 1.6rem;
   line-height: 2.4rem;
   color: #666666; }
+
+#icon {
+  width: 3rem;
+  cursor: pointer; }
 
 .main-section {
   display: block;
@@ -566,8 +603,22 @@ body {
     margin-bottom: 38px; }
 
 .title__blue {
-  color: #4579CB; }
-
+  color: #4579CB;
+  background-image: linear-gradient(-225deg, #4579CB 0%, #5487d7 29%, #7aa8f0 67%, #4579CB 100%);
+  background-size: auto auto;
+  background-clip: border-box;
+  background-size: 200% auto;
+  color: #FFFFFF;
+  background-clip: text;
+  text-fill-color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-animation: textclip 2s linear infinite;
+          animation: textclip 2s linear infinite;
+  display: inline-block; }
+@keyframes textclip {
+  to {
+    background-position: 200% center; } }
 .main-section .btn {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -651,11 +702,11 @@ body {
                 flex-direction: column;
         -ms-flex-wrap: wrap;
             flex-wrap: wrap; } }
-  .groups-section__img {
-    max-width: 100%; }
-    @media (max-width: 768px) {
-      .groups-section__img {
-        width: 50%; } }
+  .groups-section__img, .groups-section img {
+    max-width: 100%;
+    height: 100%;
+    -o-object-fit: contain;
+       object-fit: contain; }
   .groups-section__text {
     max-width: 55.8rem; }
   .groups-section__title {
@@ -697,10 +748,13 @@ body {
     background: #F6F7FD;
     border-radius: 0.8rem;
     padding: 3rem 2.3rem 2rem 1.1rem; }
-  .socielity-section__list-img {
-    margin-bottom: 1.9rem;
-    height: 6rem; }
+  .socielity-section__list-img, .socielity-section img {
+    height: 6rem;
+    max-width: 100%;
+    -o-object-fit: contain;
+       object-fit: contain; }
   .socielity-section__list-title {
+    margin-top: 1.9rem;
     font-family: "Inter", sans-serif;
     font-weight: 700;
     font-size: 2rem;
@@ -775,9 +829,16 @@ footer .container {
         display: -webkit-box;
         display: -ms-flexbox;
         display: flex;
-        -webkit-box-pack: center;
-            -ms-flex-pack: center;
-                justify-content: center;
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: row;
+                flex-direction: row;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
+        -webkit-box-pack: start;
+            -ms-flex-pack: start;
+                justify-content: flex-start;
         gap: 1rem;
         max-width: 50rem;
         margin: 3rem auto;
@@ -814,7 +875,7 @@ footer .container {
     color: #FFFFFF; }
 
 .footer-help {
-  max-width: 10rem; }
+  max-width: 33rem; }
   .footer-help__title {
     font-family: "Inter", sans-serif;
     font-weight: 700;
@@ -833,7 +894,7 @@ footer .container {
   color: #FFFFFF; }
 
 .footer-account {
-  max-width: 13.6rem; }
+  max-width: 33rem; }
   .footer-account__title {
     font-family: "Inter", sans-serif;
     font-weight: 700;
@@ -852,14 +913,7 @@ footer .container {
   color: #FFFFFF; }
 
 .footer-contacts {
-  max-width: 21.5rem;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  gap: 1.8rem; }
+  max-width: 33rem; }
   .footer-contacts__title {
     font-family: "Inter", sans-serif;
     font-weight: 700;

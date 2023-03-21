@@ -17,7 +17,7 @@
 	background-size: auto auto;
 	background-clip: border-box;
 	background-size: 200% auto;
-	color: #fff;
+	color: $white;
 	background-clip: text;
 	text-fill-color: transparent;
 	-webkit-background-clip: text;
@@ -70,29 +70,29 @@
 			}
 		}
 	}
-	&__ul:hover li a{
+	&__ul:hover &__li &__a{
 		transform: scale(1.2);
 		opacity: 0.2;
 		filter: blur( 0.1rem );
 	}
-	&__ul li {
+	&__ul &__li {
 		list-style: none;
 		margin: 0 2rem;
 		transition: $transition;
 	}
-	&__ul li a {
+	&__ul &__li &__a {
 		display: block;
 		position: relative;
 		padding: 0 0.5rem;		
 		transition: 0.5s;
 	}
-	&__ul li a:hover{
+	&__ul &__li &__a:hover{
 		transform: scale(1.5);
 		opacity: 1;
 		filter: blur(0);
 		color: $white;
 	}
-	&__ul li a:before{
+	&__ul &__li &__a:before{
 		content: '';
 		position: absolute;
 		top: 0;
@@ -105,7 +105,7 @@
 		transform: scaleX(0);
 		z-index: -1;
 	}
-	&__ul li a:hover:before{
+	&__ul &__li &__a:hover:before{
 		transition: transform 0.5s;
 		transform-origin: left;
 		transform: scaleX(1);
@@ -124,4 +124,9 @@
 		@include text($ff, 700, 1.6rem, 2.4rem, $grey);
 
 	}
+}
+
+#icon {
+	width: 3rem;
+	cursor: pointer;
 }

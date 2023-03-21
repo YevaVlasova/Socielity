@@ -15,8 +15,58 @@ html {
     }
 }
 
+:root {
+    --color-bg: #000;
+    --color-primary: #5987D1;
+    --color-grey: #FFF;
+    --color-owl: #2F2F2F;
+    --color-list: #121212;
+    --color-input: #262626;
+    --color-footer: #272727;
+}
+
+.dark-theme {
+    background: var(--color-bg);
+    .btn {
+        background: var(--color-primary);
+    }
+    a {
+        color: var(--color-grey);
+    }
+    .icon-menu {
+        color: var(--color-grey);
+    }
+    .main-section__title, .main-section__desc, .title, .desc, .groups-section__title, .groups-section__desc {
+        color: var(--color-grey);
+    }
+
+    .owl-stage-outer {
+        background: var(--color-owl);
+    }
+
+    .socielity-section__list {
+        background: var(--color-list);
+    }
+
+    .socielity-section__list-title, .socielity-section__list-desc {
+        color: var(--color-grey);
+    }
+
+    .email {
+        background: var(--color-input);
+        &__input {
+            color: var(--color-grey);
+        }
+    }
+
+    .footer {
+        background: var(--color-footer);
+    }
+}
+
 body {
     font-family: $ff;
+    background: $white;;
 }
 
 .first {

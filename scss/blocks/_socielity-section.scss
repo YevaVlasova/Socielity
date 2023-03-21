@@ -17,12 +17,14 @@
         padding: 3rem 2.3rem 2rem 1.1rem;
     }
 
-    &__list-img {
-        margin-bottom: 1.9rem;
+    &__list-img, img {
         height: 6rem;
+        max-width: 100%;
+        object-fit: contain;
     }
 
     &__list-title {
+        margin-top: 1.9rem;
         @include text($ff, 700, 2rem, 2.8rem, $text);
         text-align: center;
         margin-bottom: 1.2rem;

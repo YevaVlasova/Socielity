@@ -15,11 +15,10 @@
         }
     }
 
-    &__img {
+    &__img, img {
         max-width: 100%;
-        @include tablet-small {
-            width: 50%;
-        }
+        height: 100%;
+        object-fit: contain;
     }
 
     &__text {

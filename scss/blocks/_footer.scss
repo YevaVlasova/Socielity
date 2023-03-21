@@ -23,7 +23,9 @@ footer .container {
         grid-template-columns: auto;
         .footer-section {
             display: flex;
-            justify-content: center;
+            flex-direction: row;
+            align-items: center;
+            justify-content: flex-start;
             gap: 1rem;
             max-width: 50rem;
             margin: 3rem auto;
@@ -69,7 +71,7 @@ footer .container {
 .material-icons {
 }
 .footer-help {
-    max-width: 10rem;
+    max-width: 33rem;
 
 		&__title {
             @include text($ff, 700, 2rem, 4.8rem, $white);
@@ -92,7 +94,7 @@ footer .container {
 		}
 }
 .footer-account {
-    max-width: 13.6rem;
+    max-width: 33rem;
 
 		&__title {
             @include text($ff, 700, 2rem, 4.8rem, $white);
@@ -113,11 +115,7 @@ footer .container {
 		}
 }
 .footer-contacts {
-    max-width: 21.5rem;
-    display: flex;
-    justify-content: space-between;
-    gap: 1.8rem;
-
+    max-width: 33rem;
 		&__title {
             @include text($ff, 700, 2rem, 4.8rem, $white);
             margin-bottom: 3rem;
